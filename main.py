@@ -12,8 +12,11 @@ class Library:
     def book_lists(self):
         with open("books.txt", "r") as f:
             data = f.readlines()
-            for line in data:
-                print(line)
+            if not data:
+                print("Hiç kitap yok. \n")
+            else:
+                for line in data:
+                    print(line)
 
     def book_del(self,del_name):
         books = []
